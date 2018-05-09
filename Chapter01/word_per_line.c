@@ -1,5 +1,5 @@
 //
-// This is an example from Chapter 1.5.4" of
+// This is an exercise 1-12" of
 // "The C Programming Language" by Brian Kernighan and Dennis Ritchie
 // - Gary Mayfield
 
@@ -8,28 +8,25 @@
 #define IN 1                // inside a word
 #define OUT 0               // outside a word
 
-/* count lines, words, and characters in input */
+/* print input, word per line */
 
 //------------------------------------------------------------------------------
 
 int main()
 {
-    int c, nl, nw, nc, state;
+    int c, state;
 
     state = OUT;
-    nl = nw = nc = 0;
     while ((c = getchar()) != EOF){
-        ++nc;
-        if (c == '\n')
-            ++nl;
-        if (c == ' ' || c == '\n' || c == '\t')
+        if (c == ' ' || c == '\n' || c == '\t'){
             state = OUT;
-        else if (state == OUT){
+            putchar('\n');
+        }
+        else{
             state = IN;
-            ++nw;
+            putchar(c);
         }
     }
-    printf("lines - %d words - %d characters - %d\n", nl, nw, nc);
 }
 
 //------------------------------------------------------------------------------
