@@ -5,7 +5,7 @@ def main():
     for filename in glob.iglob('./**', recursive=True):
         if os.path.isfile(filename):
             if filename.endswith('.obj') or filename.endswith('.exe'):
-                print(filename)
+                print(f"removing {filename}...")
                 os.remove(filename)
 
 
