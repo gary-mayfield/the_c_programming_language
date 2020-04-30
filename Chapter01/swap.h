@@ -9,6 +9,8 @@ void Swap_i(void *, void * );
 void Swap_c(void *, void *);
 void Swap_s(void *, void *);
 
+void Swap(void *, void *, int);
+
 #ifdef __cplusplus
 }
 #endif
