@@ -30,3 +30,17 @@ TEST_CASE( "any returns pos in s1 if char from s2 found at end of s1", "[any]" )
     int result = any(s1, s2);
     REQUIRE(result == 9);
 }
+
+TEST_CASE( "any returns -1 if s2 is empty", "[any]" ) {
+    char s1[] = "Bob Bobbington";
+    char s2[] = "";
+    int result = any(s1, s2);
+    REQUIRE(result == -1);
+}
+
+TEST_CASE( "any returns -1 if s1 is empty", "[any]" ) {
+    char s1[] = "";
+    char s2[] = "AaZz";
+    int result = any(s1, s2);
+    REQUIRE(result == -1);
+}
